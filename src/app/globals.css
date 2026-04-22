@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/* Shared theme tokens                                                 */
+/* ------------------------------------------------------------------ */
+:root {
+  --bg: #000;
+  --fg: #fff;
+  --accent: #0a84ff;
+  --muted: #8e8e93;
+  --surface: #1c1c1e;
+  --surface-hi: #2c2c2e;
+  --border: rgba(255, 255, 255, 0.12);
+  --radius-win: 12px;
+  --radius-sm: 6px;
+  --shadow-win: 0 20px 60px -10px rgba(0, 0, 0, 0.6),
+    0 8px 24px -8px rgba(0, 0, 0, 0.4);
+  --menubar-h: 28px;
+  --dock-h: 80px;
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Segoe UI", system-ui, Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "SF Mono", "JetBrains Mono", "Fira Code", Consolas,
+    "Cascadia Code", Menlo, Monaco, monospace;
+}
+
+/* ---- macOS (Sonoma-ish) ------------------------------------------- */
+.theme-macos {
+  --bg: radial-gradient(
+      120% 120% at 0% 0%,
+      #ff5e3a 0%,
+      transparent 40%
+    ),
+    radial-gradient(100% 100% at 100% 0%, #c644fc 0%, transparent 40%),
+    radial-gradient(120% 100% at 50% 100%, #1d4ed8 0%, #0a0a2a 60%);
+  --fg: #f5f5f7;
+  --accent: #0a84ff;
+  --muted: rgba(235, 235, 245, 0.6);
+  --surface: rgba(28, 28, 30, 0.72);
+  --surface-hi: rgba(44, 44, 46, 0.78);
+  --border: rgba(255, 255, 255, 0.12);
+  --traffic-red: #ff5f57;
+  --traffic-yellow: #febc2e;
+  --traffic-green: #28c840;
+  font-family: var(--font-sans);
+}
+
+/* ---- Arch Linux ---------------------------------------------------- */
+.theme-arch {
+  --bg: #0c0d10;
+  --fg: #d4d4d4;
+  --accent: #1793d1; /* official Arch blue */
+  --muted: #6a6a6a;
+  --surface: #111216;
+  --surface-hi: #1a1b20;
+  --border: rgba(23, 147, 209, 0.24);
+  --term-green: #8ec07c;
+  --term-red: #fb4934;
+  --term-yellow: #fabd2f;
+  --term-blue: #83a598;
+  --term-purple: #d3869b;
+  --term-cyan: #8ec07c;
+  font-family: var(--font-mono);
+}
+
+@theme inline {
+  --color-background: var(--bg);
+  --color-foreground: var(--fg);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-surface: var(--surface);
+  --color-surface-hi: var(--surface-hi);
+  --color-border: var(--border);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+}
+
+/* Utility: kill tap highlight on touch devices */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Utility: custom selection on Arch to mimic terminal reverse-video */
+.theme-arch ::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Respect reduced motion globally */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

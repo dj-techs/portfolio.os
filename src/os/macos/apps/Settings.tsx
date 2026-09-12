@@ -59,7 +59,7 @@ export default function Settings({ pane }: Props) {
         {active === "about" && (
           <PaneBody
             title="About This Mac"
-            body="JamesOS · AI/ML Edition · 7yr/∞ experience"
+            body="JamesOS · Founder Edition · AlamoIQ + WeghachiAI"
           />
         )}
       </main>

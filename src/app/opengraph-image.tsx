@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "D. James Fusilier — Senior AI/ML Engineer";
+export const alt = "D. James Fusilier — AI Product Leader & Founder";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -21,7 +21,7 @@ export default function OG() {
           fontFamily: "system-ui, sans-serif",
         }}
       >
-        <div style={{ fontSize: 28, opacity: 0.8 }}>os.djames.dev</div>
+        <div style={{ fontSize: 28, opacity: 0.8 }}>djames.dev</div>
         <div
           style={{
             fontSize: 84,
@@ -33,7 +33,7 @@ export default function OG() {
           D. James Fusilier
         </div>
         <div style={{ fontSize: 40, marginTop: 16, opacity: 0.9 }}>
-          Senior AI/ML Engineer · Full Stack · MLOps &amp; GenAI
+          AI Product Leader &amp; Founder · Responsible AI
         </div>
         <div
           style={{

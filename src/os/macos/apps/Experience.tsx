@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { experience } from "@/content/experience";
+import { experience, formatDates } from "@/content/experience";
 import { cn } from "@/lib/cn";
 
 export default function Experience() {
@@ -11,7 +11,7 @@ export default function Experience() {
     <div className="h-full overflow-auto bg-neutral-950 px-6 py-5 text-white">
       <h1 className="mb-1 text-lg font-semibold">Experience</h1>
       <p className="mb-6 text-xs text-white/50">
-        7+ years · click a role to expand
+        Click a role to expand
       </p>
 
       <ol className="relative space-y-3 border-l border-white/10 pl-5">
@@ -33,7 +33,7 @@ export default function Experience() {
                     <div className="text-[11px] text-white/60">{role.company}</div>
                   </div>
                   <div className="text-[11px] text-white/50">
-                    {role.start} – {role.end ?? "Present"}
+                    {formatDates(role)}
                     {role.location ? (
                       <span className="ml-2 text-white/30">· {role.location}</span>
                     ) : null}

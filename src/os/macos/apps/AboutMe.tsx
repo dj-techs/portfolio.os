@@ -26,7 +26,7 @@ export default function AboutMe() {
       <p className="text-xs text-white/60">{profile.title}</p>
 
       <div className="mt-6 w-full max-w-md space-y-4 text-sm leading-relaxed text-white/80">
-        <p>{profile.tagline}</p>
+        <p>{profile.bio}</p>
       </div>
 
       <div className="mt-6 grid w-full max-w-md grid-cols-2 gap-3 text-xs">
@@ -38,13 +38,28 @@ export default function AboutMe() {
         <Row label="Phone">{profile.phone}</Row>
         <Row label="Location">{profile.location}</Row>
         <Row label="GitHub">
+          {profile.githubs.map((u, i) => (
+            <span key={u}>
+              {i > 0 && " · "}
+              <a
+                className="text-[color:var(--accent)] hover:underline"
+                href={u}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {u.split("/").pop()}
+              </a>
+            </span>
+          ))}
+        </Row>
+        <Row label="LinkedIn">
           <a
             className="text-[color:var(--accent)] hover:underline"
-            href={profile.github}
+            href={profile.linkedin}
             target="_blank"
             rel="noopener noreferrer"
           >
-            dj-techs
+            D. James Fusilier
           </a>
         </Row>
       </div>

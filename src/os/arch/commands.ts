@@ -1,6 +1,6 @@
 "use client";
 
-import { experience } from "@/content/experience";
+import { experience, formatDates } from "@/content/experience";
 import { projects } from "@/content/projects";
 import { skills } from "@/content/skills";
 import { profile } from "@/content/profile";
@@ -92,17 +92,17 @@ function neofetch(): string[] {
     `${BLUE("guest")}@${BLUE("archlinux")}`,
     "------------------",
     `${YELLOW("OS")}: JamesOS (Arch Linux x86_64)`,
-    `${YELLOW("Host")}: AI/ML Engineer · Full Stack · MLOps`,
+    `${YELLOW("Host")}: AI Product Leader · Founder`,
     `${YELLOW("Kernel")}: 6.10.0-arch1-1`,
-    `${YELLOW("Uptime")}: 7yrs ∞ days`,
+    `${YELLOW("Uptime")}: since 2013`,
     `${YELLOW("Shell")}: bash 5.2.21`,
     `${YELLOW("Resolution")}: ${typeof window !== "undefined" ? `${window.innerWidth}x${window.innerHeight}` : "—"}`,
     `${YELLOW("DE")}: Terminal`,
     `${YELLOW("Theme")}: Arch Blue (#1793D1)`,
     `${YELLOW("CPU")}: Claude Sonnet 4.6`,
-    `${YELLOW("Memory")}: loaded with RLHF + RAG pipelines`,
+    `${YELLOW("Memory")}: loaded with multi-agent pipelines + RLHF`,
     `${YELLOW("Email")}: ${profile.email}`,
-    `${YELLOW("GitHub")}: ${profile.github}`,
+    `${YELLOW("GitHub")}: ${profile.githubs.join(" · ")}`,
   ];
   // Side-by-side logo + info
   const out: string[] = [];
@@ -121,7 +121,7 @@ function experiencePlain(): string[] {
   const out: string[] = [];
   experience.forEach((role) => {
     out.push(
-      `${YELLOW(role.title)} — ${BLUE(role.company)}   ${DIM(`${role.start} – ${role.end ?? "Present"}`)}`
+      `${YELLOW(role.title)} — ${BLUE(role.company)}   ${DIM(formatDates(role))}`
     );
     if (role.location) out.push(DIM(`  ${role.location}`));
     role.bullets.forEach((b) => out.push(`  • ${b}`));
@@ -260,7 +260,7 @@ const COMMANDS: Cmd[] = [
       const f = args[0];
       if (!f) return { output: [`cat: missing file operand`] };
       if (f === "about.md") {
-        return { output: [profile.tagline] };
+        return { output: [profile.bio] };
       }
       if (f === "resume.txt") {
         return { output: resumePager() };
@@ -274,7 +274,8 @@ const COMMANDS: Cmd[] = [
             `TITLE:${profile.title}`,
             `EMAIL:${profile.email}`,
             `TEL:${profile.phone}`,
-            `URL:${profile.github}`,
+            ...profile.githubs.map((u) => `URL:${u}`),
+            `URL:${profile.linkedin}`,
             `END:VCARD`,
           ],
         };
@@ -401,7 +402,7 @@ const COMMANDS: Cmd[] = [
   {
     name: "about",
     brief: "One-paragraph bio",
-    run: () => ({ output: [profile.tagline] }),
+    run: () => ({ output: [profile.bio] }),
   },
   {
     name: "contact",
@@ -412,7 +413,8 @@ const COMMANDS: Cmd[] = [
         `${YELLOW(profile.name)}`,
         `  email: ${profile.email}`,
         `  phone: ${profile.phone}`,
-        `  github: ${profile.github}`,
+        ...profile.githubs.map((u) => `  github: ${u}`),
+        `  linkedin: ${profile.linkedin}`,
         DIM("(press Enter on your mail client link)"),
         { kind: "link", href: `mailto:${profile.email}`, label: "Open mail compose →" },
       ],
@@ -595,7 +597,8 @@ function resumePager(): string[] {
   const lines: string[] = [];
   lines.push(YELLOW(profile.name));
   lines.push(DIM(profile.title));
-  lines.push(DIM(`${profile.email} · ${profile.phone} · ${profile.github}`));
+  lines.push(DIM(`${profile.email} · ${profile.phone}`));
+  lines.push(DIM([...profile.githubs, profile.linkedin].join(" · ")));
   lines.push("");
   lines.push(BLUE("SUMMARY"));
   lines.push("  " + profile.tagline);
@@ -603,7 +606,7 @@ function resumePager(): string[] {
   lines.push(BLUE("EXPERIENCE"));
   experience.forEach((role) => {
     lines.push(
-      `  ${YELLOW(role.title)} — ${role.company}  ${DIM(`${role.start} – ${role.end ?? "Present"}`)}`
+      `  ${YELLOW(role.title)} — ${role.company}  ${DIM(formatDates(role))}`
     );
     role.bullets.forEach((b) => lines.push("    • " + b));
     lines.push("");

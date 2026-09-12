@@ -1,25 +1,28 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { profile } from "@/content/profile";
 
 const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://os.djames.dev";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://djames.dev";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "D. James Fusilier — Senior AI/ML Engineer",
+    default: "D. James Fusilier — AI Product Leader & Founder",
     template: "%s · D. James Fusilier",
   },
   description:
-    "Portfolio of D. James Fusilier — Senior AI/ML Engineer with 7+ years building RLHF pipelines, RAG systems, and production GenAI on AWS. Pick macOS or Arch Linux.",
+    "Portfolio of D. James Fusilier (Douglas Fusilier) — AI product leader and founder of AlamoIQ and WeghachiAI, building responsible, multi-agent AI for regulated industries. Pick macOS or Arch Linux.",
   keywords: [
     "D. James Fusilier",
-    "Senior AI/ML Engineer",
+    ...profile.alternateNames,
+    "AI Product Leader",
+    "AlamoIQ",
+    "WeghachiAI",
+    "Responsible AI",
+    "AI Governance",
+    "Multi-Agent AI",
     "RLHF",
-    "LLM",
-    "GenAI",
-    "MLOps",
-    "Full Stack",
     "Portfolio",
   ],
   authors: [{ name: "D. James Fusilier" }],
@@ -28,13 +31,13 @@ export const metadata: Metadata = {
     type: "website",
     url: SITE_URL,
     siteName: "D. James Fusilier — OS Portfolio",
-    title: "D. James Fusilier — Senior AI/ML Engineer",
+    title: "D. James Fusilier — AI Product Leader & Founder",
     description:
       "macOS or Arch Linux — pick your OS. A portfolio that boots.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "D. James Fusilier — Senior AI/ML Engineer",
+    title: "D. James Fusilier — AI Product Leader & Founder",
     description:
       "macOS or Arch Linux — pick your OS. A portfolio that boots.",
   },

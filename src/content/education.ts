@@ -7,11 +7,11 @@ export const education: Education[] = [
   {
     school: "University of Houston-Downtown",
     degree:
-      "BAAS — Applied Administration · Handshake AI/UHD Fellowship (RLHF & Model Alignment)",
+      "Bachelor of Applied Arts and Sciences (BAAS) · GPA 3.86 · Tau Sigma National Honor Society · Handshake AI/UHD Fellowship: selected as a Software Engineering Expert (RLHF & model alignment)",
   },
   {
     school: "Lone Star College, Houston, TX",
     degree:
-      "AAS — Computer Programming · AAS — Mobile App/Web Development · Computer Programming Specialist II Certification · Computer Programmer Certification",
+      "A.A.S. Computer Programming · A.A.S. Mobile App & Web Development · Certifications: Computer Programming Specialist II, Computer Programmer",
   },
 ];

@@ -4,7 +4,7 @@ import BootSelector from "@/os/boot/BootSelector";
 export const metadata: Metadata = {
   title: "Boot · Choose your OS",
   description:
-    "Pick macOS or Arch Linux to enter D. James Fusilier's portfolio.",
+    "Portfolio of D. James Fusilier (Douglas Fusilier), AI product leader and founder of AlamoIQ and WeghachiAI. Pick macOS or Arch Linux to explore.",
 };
 
 export default function BootPage() {

@@ -94,7 +94,7 @@ function neofetch(): string[] {
     `${YELLOW("OS")}: JamesOS (Arch Linux x86_64)`,
     `${YELLOW("Host")}: AI Product Leader · Founder`,
     `${YELLOW("Kernel")}: 6.10.0-arch1-1`,
-    `${YELLOW("Uptime")}: since 2013`,
+    `${YELLOW("Uptime")}: since 2001`,
     `${YELLOW("Shell")}: bash 5.2.21`,
     `${YELLOW("Resolution")}: ${typeof window !== "undefined" ? `${window.innerWidth}x${window.innerHeight}` : "—"}`,
     `${YELLOW("DE")}: Terminal`,

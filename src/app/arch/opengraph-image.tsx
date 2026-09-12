@@ -26,10 +26,10 @@ export default function OG() {
           D. James Fusilier
         </div>
         <div style={{ fontSize: 36, marginTop: 12, color: "#8ec07c" }}>
-          Senior AI/ML Engineer · RLHF · RAG · GenAI
+          AI Product Leader · Founder · Multi-Agent AI
         </div>
         <div style={{ fontSize: 26, marginTop: 40, opacity: 0.6 }}>
-          os.djames.dev/arch &nbsp;·&nbsp; try `os --help`
+          djames.dev/arch &nbsp;·&nbsp; try `os --help`
         </div>
       </div>
     ),

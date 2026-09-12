@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { profile } from "@/content/profile";
-import { experience } from "@/content/experience";
+import { experience, formatDates } from "@/content/experience";
 import { skills } from "@/content/skills";
 import { education } from "@/content/education";
 
 export const metadata: Metadata = {
-  title: "D. James Fusilier — Senior AI/ML Engineer",
+  title: "D. James Fusilier — AI Product Leader & Founder",
   description:
-    "Plain-text resume and portfolio. 7+ years building RLHF pipelines, RAG systems, and production GenAI on AWS for D. James Fusilier.",
+    "Plain-text resume and portfolio of D. James Fusilier (Douglas Fusilier): AI product leader and founder of AlamoIQ and WeghachiAI, building responsible, multi-agent AI for regulated industries.",
   alternates: { canonical: "/plain" },
 };
 
@@ -17,11 +17,12 @@ const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: profile.name,
+  alternateName: profile.alternateNames,
   jobTitle: profile.title,
   email: `mailto:${profile.email}`,
   telephone: profile.phone,
   url: profile.siteUrl,
-  sameAs: [profile.github, profile.linkedin].filter(Boolean),
+  sameAs: [...profile.githubs, profile.linkedin],
   description: profile.tagline,
   knowsAbout: skills.flatMap((s) => s.items),
 };
@@ -36,17 +37,26 @@ export default function PlainPage() {
       <main className="mx-auto max-w-3xl px-6 py-12 text-neutral-200">
         <header className="mb-10">
           <h1 className="text-3xl font-bold">{profile.name}</h1>
+          <p className="mt-1 text-sm text-neutral-500">Also known as {profile.alternateNames[0]}</p>
           <p className="mt-2 text-neutral-400">{profile.title}</p>
           <p className="mt-2 text-sm text-neutral-500">
             <a href={`mailto:${profile.email}`} className="underline">
               {profile.email}
             </a>{" "}
             · {profile.phone} ·{" "}
-            <a href={profile.github} className="underline">
-              GitHub
+            {profile.githubs.map((u) => (
+              <span key={u}>
+                <a href={u} className="underline">
+                  GitHub ({u.split("/").pop()})
+                </a>{" "}
+                ·{" "}
+              </span>
+            ))}
+            <a href={profile.linkedin} className="underline">
+              LinkedIn
             </a>
           </p>
-          <p className="mt-6 max-w-prose">{profile.tagline}</p>
+          <p className="mt-6 max-w-prose">{profile.bio}</p>
           <nav className="mt-6 flex gap-4 text-sm">
             <Link href="/" className="underline">
               Boot selector
@@ -73,7 +83,7 @@ export default function PlainPage() {
                     {role.title} — {role.company}
                   </h3>
                   <span className="text-sm text-neutral-500">
-                    {role.start} – {role.end ?? "Present"}
+                    {formatDates(role)}
                   </span>
                 </div>
                 {role.location ? (

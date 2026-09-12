@@ -1,6 +1,6 @@
 # OS-Style Portfolio — Plan & Task List
 
-**Owner:** D. James Fusilier — Senior AI/ML Engineer | Full Stack | MLOps & GenAI
+**Owner:** D. James Fusilier — AI Product Leader & Founder (AlamoIQ, WeghachiAI)
 **Contact:** djamesfusilier@gmail.com · (713) 805-9804 · github.com/dj-techs
 **Goal:** Single-page OS-style portfolio with **macOS** and **Arch Linux** personas, boot-time OS selector, and an in-session OS switcher with a restart cinematic.
 
@@ -174,7 +174,7 @@ Ship placeholder surfaces only — no backend this iteration. Design so Phase 6.
 - [ ] Document the Phase 6.5 wiring plan (Anthropic SDK on Vercel Edge, prompt-cached resume context, rate limit) in a `FUTURE.md` so it's not lost
 
 ### ▸ Phase 7 — Content Population + SEO (1.5 days)
-- [ ] Fill `src/content/*` from resume. **Experience framing: "7+ years in AI/ML"** everywhere (profile.ts tagline, hero copy, `about.md`, neofetch). Do not say 12.
+- [ ] Fill `src/content/*` from resume. **Positioning: AI product leader & founder** (see §7).
   - Roles: Invisible Technologies (ML Specialist, Dec 2025–), Handshake AI Fellow (Nov 2025–), Outlier Senior GenAI (May 2024–Dec 2025), Fishbowl Software (Oct 2022–Apr 2024), Reserv (May–Dec 2021), TechnipFMC (Apr 2013–Mar 2018)
   - Highlight KPIs: −30% customer response time, −15% equipment failures
   - Skills taxonomy exactly as listed (AI/ML, Frameworks, LLMs, Languages, Cloud, DBs, Tools, Methodologies)
@@ -237,7 +237,7 @@ Ship placeholder surfaces only — no backend this iteration. Design so Phase 6.
 
 - **Framework:** Next.js 15 (App Router) + React 19 + TypeScript. SSG for `/` and `/plain`, client shells for `/macos` and `/arch`. SSR-friendly for SEO and rich OG previews.
 - **AI chat:** "Coming soon" placeholders only this iteration. Real Anthropic integration is scoped but deferred — tracked as Phase 6.5 in `FUTURE.md`.
-- **Experience framing:** **7+ years in AI/ML.** Use this verbatim in tagline, hero, about, neofetch. Do not say 12.
+- **Positioning (updated Sept 2026):** AI product leader and technology founder (AlamoIQ, WeghachiAI), per the current resume. Don't reintroduce "Senior AI/ML Engineer" or a years-of-experience count.
 
 ## 8. Immediate Next Actions (today)
 

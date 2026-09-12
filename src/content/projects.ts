@@ -12,85 +12,46 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "fishbowl-chatbot",
-    title: "Rule-based + LLM Customer Service Chatbot",
-    company: "Fishbowl Software",
-    year: "2022–2024",
+    slug: "weghachiai-reconciliation",
+    title: "Multi-Agent Revenue Assurance Platform",
+    company: "WeghachiAI Ltd.",
+    year: "Current",
     summary:
-      "Hybrid decision-tree + LLM chatbot that cut customer response times ~30% on routine inventory queries.",
+      "Four-agent AI platform for oil-and-gas revenue assurance, aligned to NUPRC/NCDMB requirements and running read-only on client ERP systems.",
     problem:
-      "High volume of repetitive customer-service tickets for routine inventory questions was blocking higher-value human interactions.",
+      "Oil-and-gas revenue assurance has to satisfy NUPRC and NCDMB regulatory requirements, and any AI system touching client ERP data must be trustworthy enough for a regulated industry.",
     approach:
-      "Designed a hybrid architecture: deterministic decision-tree routing for known-intent queries, with LLM API fall-through for long-tail/unclear intents. End-to-end ML lifecycle from requirements through production observability.",
-    stack: ["Python", "LLM APIs", "FastAPI", "Decision Trees", "MLOps"],
-    outcome: "~30% reduction in customer service response times.",
-  },
-  {
-    slug: "reserv-predictive-maintenance",
-    title: "Predictive Maintenance Scheduling",
-    company: "Reserv",
-    year: "2021",
-    summary:
-      "LLM-driven predictive maintenance system integrated into a property maintenance app — reduced unexpected equipment failures ~15%.",
-    problem:
-      "Unexpected equipment failures in property maintenance caused tenant disruption and reactive-only repair costs.",
-    approach:
-      "Integrated an LLM API with a historical maintenance data pipeline via CI/CD, enabling continuous ingestion, analysis, and real-time failure prediction with automated alerting.",
-    stack: ["LLM APIs", "CI/CD", "Python", "Automated Alerting"],
-    outcome: "~15% decrease in unexpected equipment failures.",
-  },
-  {
-    slug: "outlier-rag-pipelines",
-    title: "Enterprise RAG Pipelines on AWS",
-    company: "Outlier",
-    year: "2024–2025",
-    summary:
-      "High-performance RAG pipelines + React/TypeScript/FastAPI frontends for enterprise GenAI on AWS.",
-    problem:
-      "Enterprise clients needed accurate, low-latency retrieval grounding for LLM-powered workflows across heterogeneous document stores.",
-    approach:
-      "Built RAG pipelines with Pandas + vector DBs, fine-tuned LLM integrations exposed via FastAPI, deployed to SageMaker/Lambda/S3. Directed cross-functional Agile teams and shipped responsive full-stack UIs.",
-    stack: [
-      "Python",
-      "TensorFlow",
-      "LangChain",
-      "FastAPI",
-      "React",
-      "TypeScript",
-      "AWS SageMaker",
-      "Vector DB",
-    ],
+      "Designed a four-agent pipeline (ingestion, matching, root-cause analysis, compliance mapping), deployed as a read-only overlay on client ERP systems inside a client-controlled cloud region.",
+    stack: ["Multi-agent AI", "Python", "AWS", "IAM", "ERP integration"],
     outcome:
-      "Significantly improved retrieval accuracy and throughput for multiple enterprise clients.",
+      "Responsible AI built in: human-verified findings, IAM-enforced read-only access, synthetic-canary recall testing, frozen-baseline drift detection, and acknowledgment-required alerting.",
+  },
+  {
+    slug: "alamoiq-holding",
+    title: "AI Holding Company & Venture Incubation",
+    company: "AlamoIQ Inc.",
+    year: "Current",
+    summary:
+      "Delaware C-Corp that licenses AI model architectures for energy-sector logistics and audit, and incubates portfolio AI ventures.",
+    problem:
+      "AI products for different markets and regulators need shared technical direction and consistent governance, not a separate rulebook per venture.",
+    approach:
+      "Set technical direction and AI governance standards for every portfolio product; incubating ventures including a West African children's AI/ML education platform.",
+    stack: ["AI governance", "Model licensing", "Venture incubation"],
+    outcome: "One set of AI governance standards applied consistently across portfolio products.",
   },
   {
     slug: "handshake-rlhf",
-    title: "RLHF Pipelines for Software Engineering",
+    title: "RLHF & Model Alignment",
     company: "Handshake AI / UHD Fellowship",
-    year: "2025–present",
+    year: "2025",
     summary:
-      "End-to-end RLHF pipelines and SFT datasets aligning LLMs with software engineering best practices and safety guardrails.",
+      "Trained and evaluated large language models through reinforcement learning from human feedback, focused on alignment and response quality.",
     problem:
-      "LLM code generation quality varies widely across paradigms and often produces unsafe or non-idiomatic patterns under real engineering constraints.",
+      "Large language models need expert human feedback to give aligned, high-quality answers on software engineering tasks.",
     approach:
-      "Designed preference pairs and SFT datasets spanning Python, JavaScript, and SQL; synthesized multi-paradigm code-quality evaluations to drive measurable gains in generation, refactoring, and debugging.",
-    stack: ["RLHF", "SFT", "Preference Modeling", "Python", "JavaScript", "SQL"],
-    outcome:
-      "Measurable improvements in LLM code generation, refactoring, and debugging performance.",
-  },
-  {
-    slug: "technipfmc-nxopen",
-    title: "CAD Automation (NXOpen + TeamCenter)",
-    company: "TechnipFMC",
-    year: "2013–2018",
-    summary:
-      "Python + PySpark integrations across NXOpen and TeamCenter — streamlined engineering workflows and cut manual overhead.",
-    problem:
-      "Engineering project management involved repetitive manual steps across NXOpen and TeamCenter, creating friction for cross-functional teams.",
-    approach:
-      "Wrote Python + PySpark integrations automating common workflows; produced high-fidelity 3D models with FEA to validate compliant solutions.",
-    stack: ["Python", "PySpark", "NXOpen", "TeamCenter", "FEA"],
-    outcome:
-      "Reduced manual overhead and improved cross-functional throughput; optimized CAD license portfolio for compliance and cost.",
+      "Brought software engineering expertise to RLHF training and evaluation, judging model responses for alignment and quality.",
+    stack: ["RLHF", "LLM alignment", "Model evaluation", "Python"],
+    outcome: "Selected for the fellowship's Software Engineering Expert track.",
   },
 ];

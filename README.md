@@ -1,6 +1,6 @@
 # os-portfolio
 
-An OS-style portfolio for **D. James Fusilier** — Senior AI/ML Engineer with 7+ years in RLHF, LLM alignment, RAG, and production GenAI on AWS.
+An OS-style portfolio for **D. James Fusilier** — AI product leader and founder of AlamoIQ and WeghachiAI, building responsible, multi-agent AI for regulated industries.
 
 Pick your OS at `/` and boot into a fully-themed shell:
 

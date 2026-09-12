@@ -4,7 +4,7 @@ import MacOsShell from "@/os/macos/Shell";
 export const metadata: Metadata = {
   title: "macOS",
   description:
-    "Explore D. James Fusilier's portfolio in a macOS desktop — Finder, Dock, Preview, and more.",
+    "Explore the portfolio of D. James Fusilier (Douglas Fusilier) in a macOS desktop — Finder, Dock, Preview, and more.",
 };
 
 export default function MacOsPage() {

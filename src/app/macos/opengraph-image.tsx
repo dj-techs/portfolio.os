@@ -26,12 +26,12 @@ export default function OG() {
           <div style={{ width: 16, height: 16, borderRadius: 999, background: "#febc2e" }} />
           <div style={{ width: 16, height: 16, borderRadius: 999, background: "#28c840" }} />
         </div>
-        <div style={{ fontSize: 28, opacity: 0.8 }}>os.djames.dev / macOS</div>
+        <div style={{ fontSize: 28, opacity: 0.8 }}>djames.dev / macOS</div>
         <div style={{ fontSize: 80, fontWeight: 700, lineHeight: 1.1, marginTop: 16 }}>
           D. James Fusilier
         </div>
         <div style={{ fontSize: 38, marginTop: 16, opacity: 0.9 }}>
-          Senior AI/ML Engineer — explore the portfolio
+          AI Product Leader &amp; Founder — explore the portfolio
         </div>
       </div>
     ),

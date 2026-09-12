@@ -173,8 +173,9 @@ export default function BootSelector() {
                 What is this?
               </h2>
               <p className="mb-3">
-                This is the portfolio of <strong>D. James Fusilier</strong> — Senior AI/ML Engineer with
-                7+ years building RLHF pipelines, RAG systems, and production GenAI on AWS.
+                This is the portfolio of <strong>D. James Fusilier</strong> — AI product leader and
+                founder of AlamoIQ and WeghachiAI, building responsible, multi-agent AI for regulated
+                industries.
               </p>
               <p className="mb-3">
                 Instead of a scrolling résumé, pick an OS and explore. Both shells share the same content

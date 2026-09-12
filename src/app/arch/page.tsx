@@ -4,7 +4,7 @@ import ArchShell from "@/os/arch/Shell";
 export const metadata: Metadata = {
   title: "Arch Linux",
   description:
-    "Explore D. James Fusilier's portfolio through an Arch Linux terminal. Try `os --help`.",
+    "Explore the portfolio of D. James Fusilier (Douglas Fusilier) through an Arch Linux terminal. Try `os --help`.",
 };
 
 export default function ArchPage() {

@@ -44,7 +44,7 @@ export default function NotificationCenter() {
                 <span>Hire Me</span>
               </div>
               <p className="text-xs text-white/80">
-                Open to senior AI/ML + full-stack roles. 7+ years · RLHF · RAG · AWS.
+                Open to Director-level AI roles. Founder · Responsible AI · RLHF.
               </p>
               <a
                 href={`mailto:${profile.email}?subject=Let's%20talk`}
